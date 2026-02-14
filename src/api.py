@@ -12,8 +12,8 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 # Simple rule-based fallback classifier (used when a HF model cannot be loaded)
 import re
 
-POSITIVE_WORDS = {"good", "great", "excellent", "amazing", "love", "loved", "fantastic", "best", "wonderful", "enjoyed", "recommend", "awesome"}
-NEGATIVE_WORDS = {"bad", "terrible", "awful", "worst", "hate", "hated", "boring", "disappointing", "poor", "horrible", "waste", "unwatchable"}
+POSITIVE_WORDS = {"good", "great", "excellent", "amazing", "love", "loved", "fantastic", "best", "wonderful", "enjoyed", "recommend", "awesome", "happy", "awesome", "perfect"}
+NEGATIVE_WORDS = {"bad", "terrible", "awful", "worst", "hate", "hated", "boring", "disappointing", "poor", "horrible", "waste", "unwatchable", "sad", "sadness", "unhappy", "disappointed", "depressed", "angry", "annoyed", "frustrated", "upset"}
 # simple negative patterns for negated positives
 NEGATIVE_PATTERNS = [
     r"\bdon't like\b",
