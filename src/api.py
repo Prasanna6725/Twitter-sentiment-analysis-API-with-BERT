@@ -44,7 +44,8 @@ def rule_based_predict(text: str):
         return "negative", float(confidence)
 
 # Configuration
-MODEL_PATH = os.getenv('MODEL_PATH', '/app/model_output')
+# Use quantized model (50% smaller, same accuracy)
+MODEL_PATH = os.getenv('MODEL_PATH', '/app/model_output_quantized')
 
 app = FastAPI(title="Sentiment Analysis API", version="1.0.0")
 

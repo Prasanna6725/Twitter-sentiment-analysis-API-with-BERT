@@ -1,8 +1,8 @@
-# Ignore large model files and outputs
-*.safetensors
-*.pt
-*.bin
+# Ignore large model files (only track quantized version)
 model_output/
+model_output_quantized/*.safetensors
+model_output_quantized/*.bin
+*.pt
 results/
 data/raw/
 data/processed/
