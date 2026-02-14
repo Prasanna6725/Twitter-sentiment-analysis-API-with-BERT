@@ -44,8 +44,9 @@ def rule_based_predict(text: str):
         return "negative", float(confidence)
 
 # Configuration
-# Use quantized model (50% smaller, same accuracy)
-MODEL_PATH = os.getenv('MODEL_PATH', '/app/model_output_quantized')
+# Use pre-trained distilbert model fine-tuned on SST-2 (Stanford Sentiment Treebank)
+# The custom quantized model may not be well-trained, so we use proven pre-trained model
+MODEL_PATH = os.getenv('MODEL_PATH', 'distilbert-base-uncased-finetuned-sst-2-english')
 
 app = FastAPI(title="Sentiment Analysis API", version="1.0.0")
 
@@ -119,7 +120,7 @@ async def predict(request: PredictionRequest):
             probabilities = torch.softmax(logits, dim=1)
             prediction = torch.argmax(logits, dim=1).item()
             confidence = probabilities[0][prediction].item()
-            sentiments = ['negative', 'positive']
+            sentiments = ['negative', 'positive']  # Standard mapping for pre-trained models
             sentiment = sentiments[prediction]
 
             # if model is unsure (low confidence) or disagrees with rule-based result, prefer rule-based
