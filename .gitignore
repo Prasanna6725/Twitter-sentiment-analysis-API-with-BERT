@@ -1,0 +1,21 @@
+# Ignore large model files and outputs
+*.safetensors
+*.pt
+*.bin
+model_output/
+results/
+data/raw/
+data/processed/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment
+.env
+
+# Docker
+*.log
+
+# VS Code
+.vscode/
