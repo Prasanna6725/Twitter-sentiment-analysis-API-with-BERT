@@ -1,0 +1,6 @@
+text,predicted_sentiment,confidence
+"I absolutely loved this movie, it was fantastic and amazing!",positive,0.5527886748313904
+This was the worst film I have seen. Terrible and boring.,positive,0.5453066229820251
+"It was okay, not great but not terrible either.",positive,0.5448045134544373
+Excellent performances and wonderful story.,positive,0.5361961126327515
+"I hated it, what a waste of time.",positive,0.5361868143081665
